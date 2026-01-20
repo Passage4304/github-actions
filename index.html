@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;            
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;            
+        }
+    </style>
+</head>
+<body>
+    <h1>Hi there! Welcome from CI/CD!</h1>
+    <div class="container">
+        <p>This site deployed with CI/CD automation!</p>
+        <p>Last deploy: <span id="timestamp"></span></p>
+        <p>Link to this project on GitHub: <a href="https://github.com/Passage4304/github-actions">click</a></p>
+    </div>
+
+    <script>
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+    </script>
+</body>
+</html>

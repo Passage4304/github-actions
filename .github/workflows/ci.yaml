@@ -1,4 +1,4 @@
-name: CI
+name: CI/CD Static Website flow
 
 on:
   push:
@@ -9,16 +9,13 @@ on:
 jobs:
   learn-job:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Create test file
-        uses: touch test.txt
-
-      - name: Say Hello and save it to test file
-        run: echo "Hi there! I'm the CI Github Action!" > test.txt
-
-      - name: Show date
-        run: date
-
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
